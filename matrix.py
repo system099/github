@@ -237,11 +237,11 @@ def start_attack(user_id, target, port, duration):
     username = f"@{user.username}" if user.username else f"UserID: {user_id}"
     log_command(user_id, target, port, duration)
     response = (
-        f"🚀 𝗔𝘁𝘁𝗮𝗰𝗸 𝗦𝗲𝗻𝘁 𝗦𝘂𝗰𝗰𝗲𝘀𝘀𝗳𝘂𝗹𝗹𝘆! 🚀\n\n"
-        f"𝗧𝗮𝗿𝗴𝗲𝘁: {target}:{port}\n"
-        f"𝗔𝘁𝘁𝗮𝗰𝗸 𝗧𝗶𝗺𝗲: {duration}\n"
-        f"𝗔𝘁𝘁𝗮𝗰𝗸𝗲𝗿 𝗡𝗮𝗺𝗲: {username}\n\n"
-        f"📈 𝗔𝘁𝘁𝗮𝗰𝗸 𝘀𝘁𝗮𝘁𝘂𝘀 :- 𝗔𝘁𝘁𝗮𝗰𝗸 𝗶𝗻 𝗽𝗿𝗼𝗴𝗿𝗲𝘀𝘀.."
+        f"🚀 Attack Initiated! 💥\n\n"
+        f"🔌 Target Port: {target}:{port}\n"
+        f"⏳ Duration: {duration}\n"
+        f"🌐 Attacker name: {username}\n\n"
+        f"📈 attack status :- ✅ Attack successfully Executed..."
     )
     bot.send_message(user_id, response)
     try:
@@ -257,7 +257,7 @@ def start_attack(user_id, target, port, duration):
 def handle_attack_button(message):
     user_id = str(message.chat.id)
     if user_id in allowed_user_ids:
-        bot.send_message(message.chat.id, "𝗣𝗹𝗲𝗮𝘀𝗲 𝗽𝗿𝗼𝘃𝗶𝗱𝗲 𝗮𝘁𝘁𝗮𝗰𝗸 𝗶𝗻 𝘁𝗵𝗲 𝗳𝗼𝗹𝗹𝗼𝘄𝗶𝗻𝗴 𝗳𝗼𝗿𝗺𝗮𝘁:\n\n<𝗵𝗼𝘀𝘁> <𝗽𝗼𝗿𝘁> <𝘁𝗶𝗺𝗲>")
+        bot.send_message(message.chat.id, "Please provide attack in the following format:\n\n<𝗵𝗼𝘀𝘁> <𝗽𝗼𝗿𝘁> <𝘁𝗶𝗺𝗲>")
         bot.register_next_step_handler(message, handle_attack_details)
     else:
         bot.send_message(message.chat.id, "⛔️ 𝗨𝗻𝗮𝘂𝘁𝗵𝗼𝗿𝗶𝘇𝗲𝗱 𝗔𝗰𝗰𝗲𝘀𝘀!\n\n• 𝗬𝗼𝘂 𝗮𝗿𝗲 𝗻𝗼𝘁 𝘀𝘂𝗯𝘀𝗰𝗿𝗶𝗯𝗲𝗱\n• 𝗣𝘂𝗿𝗰𝗵𝗮𝘀𝗲 𝗮 𝗹𝗶𝗰𝗲𝗻𝘀𝗲 𝗸𝗲𝘆 𝘁𝗼 𝘂𝘀𝗲 𝘁𝗵𝗶𝘀 𝗰𝗼𝗺𝗺𝗮𝗻𝗱\n\n🛒 𝗧𝗼 𝗽𝘂𝗿𝗰𝗵𝗮𝘀𝗲 𝗮𝗻 𝗮𝗰𝗰𝗲𝘀𝘀 𝗸𝗲𝘆:\n• 𝗖𝗼𝗻𝘁𝗮𝗰𝘁 𝗮𝗻𝘆 𝗮𝗱𝗺𝗶𝗻 𝗼𝗿 𝗿𝗲𝘀𝗲𝗹𝗹𝗲𝗿\n\n📢 𝗖𝗵𝗮𝗻𝗻𝗲𝗹:@matrix_vipddos")
